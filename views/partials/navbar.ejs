@@ -1,0 +1,51 @@
+<!-- views/partials/navbar.ejs -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Ay Adrean</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" 
+    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+    aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toogle" href="#" id="navbarDropdown"
+                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    API's
+                </a>   
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/pista">Ubicacion <img src="/images/mapas-de-google.png"width="30px" height="30px" >(La mejor pista del mundo)</a>
+                    <a class="dropdown-item" href="/pinterest" class="nav-link">Sigueme en pinterest <img src="/images/pinterest.png"width="30px" height="30px" ></a>
+                    <a class="dropdown-item" href="/venta">Compra software <img src="/images/laptop.png"width="30px" height="30px"></a>
+                    <a class="dropdown-item" href="mimusica">Mi musica <img src="/images/jugar.png"width="30px" height="30px" ></a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="covid">Numeros(Covid19) <img src="/images/coronavirus.png"width="30px" height="30px" ></a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/acercade">Acerca de</a>
+            </li>
+                    
+            <li>
+                <fb:login-button 
+                    scope="public_profile,email"
+                    onlogin="checkLoginState();"
+                    </fb:login-button>
+            </li>
+            
+            <a class="btn btn-primary" href="form" role="button">Sugerir contenido</a>
+            <a class="btn btn-success" href="atletas" role="button">Atletas</a>
+            <a class="btn btn-dark" href="clubs" role="button">Clubs</a>
+            <a class="btn btn-success" href="aclubs" role="button">Registro a Club</a>
+           
+        </ul>
+       
+    </div>
+    <img src="/images/logo.png"width="100px" height="100px" >
+  
+</nav>
+

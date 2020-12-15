@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <%- include('partials/head'); %>
+    
+      
+    </style>
+  </head>
+  <body <div style="background-image: url('images/fondo1.jpg');"></div>>
+    
+    
+   <%- include('partials/nav'); %>
+
+   <div class="jumbotron">  
+    <form action="/users/Sug" method="POST">
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Correo electronico</label>
+          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name="correo">
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Selecciona tu sexo</label>
+          <select class="form-control" name="sexo">
+            <option>Hombre</option>
+            <option>Mujer</option>
+            <option>Otro</option>
+          </select>
+        </div>
+       
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Que contenido te gustaria que hubiere en la pagina?</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="sugerencia"></textarea>
+        </div>
+        <div class="form-group"> 
+        <button class="btn btn-success btn-block" type="submit">Enviar</button>
+        </div>>
+    </form>
+
+ 
+   </div>
+  
+   
+   <%- include('partials/script'); %>
+  
+   
+  </body>
+   <foote>
+     <%- include('partials/footer'); %>
+   </foote>
+
+</html>

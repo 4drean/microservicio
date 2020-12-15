@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('partials/navbar'); %>
+    <%- include('partials/head'); %>
+  
+    <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
+
+    <script type="text/javascript">
+      window.onload = function() {
+        L.mapquest.key = 'GrGhhZ7bqifQHdC00kDZMufCZ95US7uo';
+        var baseLayer = L.mapquest.tileLayer('map');
+    
+        L.mapquest.geocoding().geocode('1 SW Bowerman Dr, Beaverton, OR 97006, Estados Unidos', createMap);
+
+        function createMap(error, response) {
+          var location = response.results[0].locations[0];
+          var latLng = location.displayLatLng;
+          var map = L.mapquest.map('map', {
+            center: latLng,
+            layers: L.mapquest.tileLayer('hybrid'),
+            zoom: 13
+          });
+          L.control.layers({
+          'Map': baseLayer,
+          'Hybrid': L.mapquest.tileLayer('hybrid'),
+          'Satellite': L.mapquest.tileLayer('satellite'),
+          'Light': L.mapquest.tileLayer('light'),
+          'Dark': L.mapquest.tileLayer('dark')
+        }).addTo(map);
+        
+        
+
+        var customPopup = L.popup({ closeButton: false })
+        .setLatLng(latLng)
+            .setContent('<strong>' + location.adminArea5 + ', ' + location.adminArea3 + '</strong> is located here.')
+            .openOn(map);
+        }
+        
+        
+        L.control.zoom({
+          position: 'topright'
+        }).addTo(map);
+
+        L.mapquest.directionsControl({
+          routeSummary: {
+            enabled: false
+          },
+          narrativeControl: {
+            enabled: true,
+            compactResults: false
+          }
+        }).addTo(map);
+      
+      }
+      
+     
+      
+  
+      
+    </script>
+  </head>
+
+  <body style="background-color:rgba(11, 71, 56, 0.918);">
+    <div class="jumbotron">  
+    
+        <h1 class="display-4">Michael Johnson Track  <img src="/images/mapas-de-google.png"width="70px" height="70px" ></h1>
+        <p class="lead">Una de las pistas mas bonitas</p>
+         
+        <hr class="my-4">
+        <h4>Dentro de Oregón, en Estados Unidos, se encuentra uno de los verdaderos paraísos para cualquier corredor. Un Estado que podemos decir abiertamente que se puede medir de tú a tú contra atletas de la categoría de Kenia o Etiopía. Prefontaine podría ser uno de ellos sin ir más lejos, pero también Galen Rupp, el reciente ganador de la maratón de Chicago, o también Devon Allen, el atleta blanco americano más rápido en los 110 vallas son solo alguno de los productos salidos de esta factoría.
+
+            Y este sitio paradisíaco, situado en un lugar apartado y remoto de los ruidos, el estrés y la ajetreada vida de Portland es el famoso campus Nike World Headquarters. Propiedad del gigante americano de zapatillas y ropa deportiva, es el punto de encuentro para el entrenamiento de muchos corredores de élite. Pero el verdadero centro de atención de este campus es su pista de atletismo, la famosa Michael Johnson Track:</h4>
+            
+            <div class="row">
+                <div class="col-md-4">
+                  <div class="thumbnail">
+                    <a href="/images/pista.jpg">
+                      <img src="/images/pista.jpg" alt="Lights" style="width:100%">
+                      <div class="caption">
+                        <p>Visualizar...</p>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="thumbnail">
+                    <a href="/images/pista2.jpg">
+                      <img src="/images/pista2.jpg" alt="Nature" style="width:100%">
+                      <div class="caption">
+                        <p>Visializar...</p>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="thumbnail">
+                    <a href="/images/pista3.jpg">
+                      <img src="/images/pista3.jpg" alt="Fjords" style="width:100%">
+                      <div class="caption">
+                        <p>Visualizar...</p>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+  <h2>Puede modificar el estilo del mapa.</h2>
+            <div id="map" style="width: 100%; height: 530px;"></div>
+        <div>
+            
+  </body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <title>
+      <%=title%>
+    </title>
+    <link rel='stylesheet' href ='/stylesheets/style.css'/>
+    <link rel="stylesheet" type ="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
+    <link rel="stylesheet" href ="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
+  <body style="background-color: rgb(15, 52, 77)">
+    
+    <div class="card">
+    <div class="card-header">
+      <ul class="nav nav-pills w-100">
+        <li class="nav-pill active">
+          <a class="nav-link" > <h1>Listado de Atletas</h1></a>
+        </li>
+        <li class="nav-pill ml-auto">
+          <a class="nav-link active" href="/atletas/add">Agregar</a>
+        </li>
+        <li class="nav-pill ml-auto">
+          <a class="nav-link active" href="/">Regresar</a>
+        </li>
+       </ul>
+    </div>
+    </div>
+    <table id="tablaAtletas" class="display" style="width:100%">
+      <thead>
+        <tr>
+          <th style="color: #f7f6f4;">ID Afiliado FMA</th>
+          <th style="color: #f7f6f4;"> Nombre</th>
+          <th style="color: #f7f6f4;">Apellidos</th>
+          <th style="color: #f7f6f4;">Edad</th>
+          <th style="color: #f7f6f4;">Prueba</th>
+          <th style="color: #f7f6f4;">Correo</th>
+          <th style="color: #f7f6f4;">&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% if(data.length > 0){ %>
+          <% for (var i = 0 ; i < data.length ; i++){ %>
+            <tr>
+              <td>
+                <%= data[i].IDatleta%>
+              </td>
+              <td>
+                <%= data[i].Nombre%>
+              </td>
+              <td>
+          <%= data[i].Apellidos%>
+        </td>
+        <td>
+          <%= data[i].Edad%>
+        </td>
+        <td>
+          <%= data[i].Prueba%>
+        </td>
+        <td>
+          <%= data[i].Correo%>
+        </td>
+        <td>
+          <a class="btn btn-success edit"href="../atletas/update/<%=data[i].IDatleta%>">Editar</i> </a>
+           <a class="btn btn-danger delete"onclick="return alert('¿Estas seguro?')"href="../atletas/delete/<%=data[i].IDatleta%>">Eliminar</a></td>
+
+        </tr>
+
+      <% } %>
+         <% } %>
+       </tbody>
+
+          
+      </table>
+
+      <div class="row">
+        <div class="col-md-4">
+          <div class="thumbnail">
+            <a href="/images/pista.jpg">
+              <img src="/images/pista.jpg" alt="Lights" style="width:100%">
+              <div class="caption">
+                <p>Visualizar...</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="thumbnail">
+            <a href="/images/pista2.jpg">
+              <img src="/images/pista2.jpg" alt="Nature" style="width:100%">
+              <div class="caption">
+                <p>Visializar...</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="thumbnail">
+            <a href="/images/pista3.jpg">
+              <img src="/images/pista3.jpg" alt="Fjords" style="width:100%">
+              <div class="caption">
+                <p>Visualizar...</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"> </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"> </script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+</script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
+<script src="./javascripts/atletas.js"></script>
+</body>
+</html>

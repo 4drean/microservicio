@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <%- include('partials/head'); %>
+    
+      
+    </style>
+  </head>
+  <body style="background-color:rgba(104, 15, 49, 0.918);">
+
+   <%- include('partials/navbar'); %>
+
+   <div class="jumbotron">   
+ <div class="container p-3 my-3 bg-dark text-white"><h1>Mi lista de Musica <img src="/images/jugar.png"width="60px" height="60px" ></h1></div>  
+     <hr class="my-4">
+     
+     
+    
+     
+    
+    <div id="accordion">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h5 class="mb-0">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Musica electronica
+            </button>
+          </h5>
+        </div>
+    
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+          <div class="card-body">
+                      <div align="center">
+                
+                <iframe scrolling="no" frameborder="0" allowTransparency="true" src="https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=700&height=350&color=EF5466&layout=dark&size=medium&type=playlist&id=5541054942&app_id=1" width="1000" height="300"></iframe>
+              
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="headingTwo">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Reguetton
+            </button>
+          </h5>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+          <div class="card-body">
+            <iframe scrolling="no" frameborder="0" allowTransparency="true" src="https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=700&height=350&color=EF5466&layout=dark&size=medium&type=playlist&id=7912981902&app_id=1" width="1000" height="550"></iframe>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="headingThree">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Trap
+            </button>
+          </h5>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+          <div class="card-body">
+            <iframe scrolling="no" frameborder="0" allowTransparency="true" src="https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=700&height=350&color=EF5466&layout=dark&size=medium&type=playlist&id=5931172824&app_id=1" width="1000" height="550"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+   
+   <%- include('partials/script'); %>
+   <foote>
+     <%- include('partials/footer'); %>
+   </foote>
+ 
+  </body>
+  
+
+</html>
