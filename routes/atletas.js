@@ -7,7 +7,7 @@ var mensaje="";
 /* GET users listing. */
 
 router.get('/',function (req, res, next ) {
-  request.get("http://localhost:4000/atletas",(error, response,body)=>{
+  request.get("https://mcroservicio.herokuapp.com/atletas",(error, response,body)=>{
     mensaje='';
     if(error){
         console.log(error);
@@ -59,7 +59,7 @@ router.post('/add',function(req,res,next){
             Prueba:Prueba,
             Correo:Correo
         }//InvocaalMicroservicio
-        request.post({url:"http://localhost:4000/atletas",json:datosForma},
+        request.post({url:"https://mcroservicio.herokuapp.com/atletas",json:datosForma},
         (error,response,body)=>{mensaje='Eldatosehaagregadoconéxito';
         if(error){
             console.log(error);
@@ -79,7 +79,7 @@ router.get('/update/:IDatleta',(req,res)=>{
     console.log(mensaje);
     var AtletaFind;
     //Buscasiexisteelestudiantedeacuerdoalnúmerodecontrol
-    URI="http://localhost:4000/atletas/"+IDatleta;
+    URI="https://mcroservicio.herokuapp.com/atletas/"+IDatleta;
 
     console.log('URI:'+ URI);
 
@@ -122,7 +122,7 @@ if(!errors){//Encapsuladatosprovenientesdelaforma
         Apellidos:Apellidos,
         Prueba:Prueba
     }//InvocaalMicroserviciodemodificar
-    request.put({url:"http://localhost:4000/atletas",json: datosForma },
+    request.put({url:"https://mcroservicio.herokuapp.com/atletas",json: datosForma },
     (error,response,body)=>{
         mensaje='El dato  se ha modificado con éxito';
         if(error){
@@ -142,7 +142,7 @@ router.get('/delete/:IDatleta',(req,res)=>
     mensaje='Eliminando Estudiantecon NúmerodeControl'+IDatleta;
     console.log(mensaje)
     ;if(IDatleta){//InvocaalMicroservicio
-        URI="http://localhost:4000/atletas/"+IDatleta;
+        URI="https://mcroservicio.herokuapp.com/atletas/"+IDatleta;
         request.delete(URI,(error,response,body)=>{
             mensaje='Eldatosehaeliminadoconéxito';
             if(error){console.log(error);
