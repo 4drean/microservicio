@@ -7,7 +7,7 @@ var mensaje="";
 /* GET users listing. */
 
 router.get('/',function (req, res, next ) {
-  request.get("http://localhost:4000/clubs",(error, response,body)=>{
+  request.get("https://mcroservicio.herokuapp.com/clubs",(error, response,body)=>{
     mensaje='';
     if(error){
         console.log(error);
@@ -56,7 +56,7 @@ router.post('/add',function(req,res,next){
             Entrenador:Entrenador,
             Ciudad:Ciudad
         }//InvocaalMicroservicio
-        request.post({url:"http://localhost:4000/clubs",json:datosForma},
+        request.post({url:"https://mcroservicio.herokuapp.com/clubs",json:datosForma},
         (error,response,body)=>{mensaje='Eldatosehaagregadoconéxito';
         if(error){
             console.log(error);
@@ -76,7 +76,7 @@ router.get('/update/:IDclub',(req,res)=>{
     console.log(mensaje);
     var clubFind;
     //Buscasiexisteelestudiantedeacuerdoalnúmerodecontrol
-    URI="http://localhost:4000/clubs/"+IDclub;
+    URI="https://mcroservicio.herokuapp.com/clubs/"+IDclub;
 
     console.log('URI:'+ URI);
 
@@ -116,7 +116,7 @@ if(!errors){//Encapsuladatosprovenientesdelaforma
         Entrenador:Entrenador,
         Ciudad:Ciudad
     }//InvocaalMicroserviciodemodificar
-    request.put({url:"http://localhost:4000/clubs",json: datosForma },
+    request.put({url:"https://mcroservicio.herokuapp.com/clubs",json: datosForma },
     (error,response,body)=>{
         mensaje='El dato  se ha modificado con éxito';
         if(error){
@@ -136,7 +136,7 @@ router.get('/delete/:IDclub',(req,res)=>
     mensaje='Eliminando club'+IDclub;
     console.log(mensaje)
     ;if(IDclub){//InvocaalMicroservicio
-        URI="http://localhost:4000/clubs/"+IDclub;
+        URI="https://mcroservicio.herokuapp.com/clubs/"+IDclub;
         request.delete(URI,(error,response,body)=>{
             mensaje='Eldatosehaeliminadoconéxito';
             if(error){console.log(error);
